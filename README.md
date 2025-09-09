@@ -117,8 +117,8 @@ vendor-performance-analysis/
 
 ---
 <h2><a class="anchor" id="predictive--modeling"></a>Predictive Modeling Insights </h2>
-* Identified key fraud indicators by conducting exploratory data analysis on a financial dataset, revealing that fraudulent transactions have a median value 5-10 times higher than legitimate ones and a dramatically higher average risk score.
-* Built a predictive model that demonstrated a 5.8% increase in fraud detection rate over a naive baseline, while maintaining an 88% precision to minimize false positives and reduce unnecessary manual reviews.
+* Identified key fraud indicators by conducting exploratory data analysis on a financial dataset, revealing that fraudulent transactions have a median value 5-10 times higher than legitimate ones and a dramatically higher average risk score
+* Built a predictive model that demonstrated a 5.8% increase in fraud detection rate over a naive baseline, while maintaining an 88% precision to minimize false positives and reduce unnecessary manual reviews
 
 
 ---
