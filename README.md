@@ -1,7 +1,6 @@
 
-# 🧾 Vendor Performance Analysis – Retail Inventory & Sales
+# 🧾 Fraud Detection and Risk Analysis
 
-_Analyzing vendor efficiency and profitability to support strategic purchasing and inventory decisions using SQL, Python, and Power BI._
 
 ---
 
@@ -14,38 +13,33 @@ _Analyzing vendor efficiency and profitability to support strategic purchasing a
 - <a href="#data-cleaning--preparation">Data Cleaning & Preparation</a>
 - <a href="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a>
 - <a href="#research-questions--key-findings">Research Questions & Key Findings</a>
+- <a href="#research-questions--key-findings">predictive--modeling</a>
 - <a href="#dashboard">Dashboard</a>
-- <a href="#how-to-run-this-project">How to Run This Project</a>
-- <a href="#final-recommendations">Final Recommendations</a>
 - <a href="#author--contact">Author & Contact</a>
 
 ---
 <h2><a class="anchor" id="overview"></a>Overview</h2>
 
-This project evaluates vendor performance and retail inventory dynamics to drive strategic insights for purchasing, pricing, and inventory optimization. A complete data pipeline was built using SQL for ETL, Python for analysis and hypothesis testing, and Power BI for visualization.
-
+Developed a solution for financial fraud detection by analyzing financial transaction data using Exploratory Data Analysis (EDA) and predictive modeling to identify fraudulent activity. A Power BI dashboard was also created to visualize key metrics and provide actionable business insights from the findings.
 ---
 <h2><a class="anchor" id="business-problem"></a>Business Problem</h2>
 
-Effective inventory and sales management are critical in the retail sector. This project aims to:
-- Identify underperforming brands needing pricing or promotional adjustments
-- Determine vendor contributions to sales and profits
-- Analyze the cost-benefit of bulk purchasing
-- Investigate inventory turnover inefficiencies
-- Statistically validate differences in vendor profitability
-
+Effective fraud detection and risk analysis are critical in the financial sector. This project aims to:
+- Quantify financial losses and operational inefficiencies caused by fraud
+- Uncover key indicators of fraudulent activity through comprehensive data analysis
+- Develop a predictive model to proactively identify high-risk transactions
+- Validate the model's business impact by analyzing its precision and recall
+- Communicate actionable insights and a data-driven solution to business stakeholders
 ---
 <h2><a class="anchor" id="dataset"></a>Dataset</h2>
 
-- Multiple CSV files located in `/data/` folder (sales, vendors, inventory)
-- Summary table created from ingested data and used for analysis
-
+This project utilizes a synthetic dataset sourced from Kaggle, tailored for financial fraud detection. The dataset includes 21 features that simulate key aspects of transaction details and customer behavior, providing a realistic foundation for modeling and analysis.
 ---
 
 <h2><a class="anchor" id="tools--technologies"></a>Tools & Technologies</h2>
 
-- SQL (Common Table Expressions, Joins, Filtering)
-- Python (Pandas, Matplotlib, Seaborn, SciPy)
+- SQLite
+- Python (Pandas, Nimpy, Matplotlib, Seaborn, Scikit-learn, SciPy)
 - Power BI (Interactive Visualizations)
 - GitHub
 
@@ -75,88 +69,76 @@ vendor-performance-analysis/
 ---
 <h2><a class="anchor" id="data-cleaning--preparation"></a>Data Cleaning & Preparation</h2>
 
-- Removed transactions with:
-  - Gross Profit ≤ 0
-  - Profit Margin ≤ 0
-  - Sales Quantity = 0
-- Created summary tables with vendor-level metrics
-- Converted data types, handled outliers, merged lookup tables
+- Capped extreme values in Transaction_Amount using winsorization to stabilize analysis
+- Identified high outlier concentration via box plot visualization
+- Planned conversion of Timestamp, handling of missing values, and removal of duplicates
+
 
 ---
 <h2><a class="anchor" id="exploratory-data-analysis-eda"></a>Exploratory Data Analysis (EDA)</h2>
 
-**Negative or Zero Values Detected:**
-- Gross Profit: Min -52,002.78 (loss-making sales)
-- Profit Margin: Min -∞ (sales at zero or below cost)
-- Unsold Inventory: Indicating slow-moving stock
+**Initial Data Inspection:**
+- Fraud_Label shows strong class imbalance
+- Summary stats reveal skewed distributions in Transaction_Amount and Risk_Score
+**Univariate Analysis:**
+- Histograms show heavy concentration of low-value transactions
+- Bar charts highlight dominant categories in Transaction_Type and Device_Type
+**Bivariate & Multivariate Insights:**
+- Fraudulent transactions skew toward higher Transaction_Amount and Risk_Score
+- Transaction_Type distribution varies significantly by Fraud_Label
+- Time-based patterns suggest fraud spikes during off-business hours
+- Scatter plot shows positive correlation between Risk_Score and Transaction_Amount
 
-**Outliers Identified:**
-- High Freight Costs (up to 257K)
-- Large Purchase/Actual Prices
-
-**Correlation Analysis:**
-- Weak between Purchase Price & Profit
-- Strong between Purchase Qty & Sales Qty (0.999)
-- Negative between Profit Margin & Sales Price (-0.179)
 
 ---
 <h2><a class="anchor" id="research-questions--key-findings"></a>Research Questions & Key Findings</h2>
 
-1. **Brands for Promotions**: 198 brands with low sales but high profit margins
-2. **Top Vendors**: Top 10 vendors = 65.69% of purchases → risk of over-reliance
-3. **Bulk Purchasing Impact**: 72% cost savings per unit in large orders
-4. **Inventory Turnover**: $2.71M worth of unsold inventory
-5. **Vendor Profitability**:
-   - High Vendors: Mean Margin = 31.17%
-   - Low Vendors: Mean Margin = 41.55%
-6. **Hypothesis Testing**: Statistically significant difference in profit margins → distinct vendor strategies
+- Class Imbalance: 32% of transactions are fraudulent → naïve model still 68% accurate
+- Transaction Amount: Median fraud = $2,500 vs. $250 non-fraud → 900% higher
+- Risk Score: Fraud avg = 0.85 vs. 0.15 non-fraud → 467% increase
+- Feature Correlation: Risk_Score & Transaction_Amount correlation = 0.91 → strong predictive link
+- Business Impact: Baseline = 1,339 fraud cases/month → reducing even 20% saves hundreds of thousands annually
+
+
+---
+<h2><a class="anchor" id="predictive--modeling"></a>Predictive Modeling </h2>
+
+**Confusion Matrix Breakdown:**
+- True Positives: Fraud correctly flagged → direct financial protection
+- True Negatives: Legitimate transactions passed → smooth operations
+- False Positives: Legitimate flagged as fraud → added manual review workload
+- False Negatives: Missed fraud → potential financial exposure
+**Classification Metrics:**
+- Precision: Most flagged transactions were truly fraudulent → efficient review process
+- Recall: Model caught more fraud cases than baseline → stronger fraud prevention
+- F1-Score: Balanced metric for comparing overall model performance
+
+
+
+---
+<h2><a class="anchor" id="predictive--modeling"></a>Predictive Modeling Insights </h2>
+- Identified key fraud indicators by conducting exploratory data analysis on a financial dataset, revealing that fraudulent transactions have a median value 5-10 times higher than legitimate ones and a dramatically higher average risk score.
+-  Built a predictive model that demonstrated a 5.8% increase in fraud detection rate over a naive baseline, while maintaining an 88% precision to minimize false positives and reduce unnecessary manual reviews.
+
 
 ---
 <h2><a class="anchor" id="dashboard"></a>Dashboard</h2>
 
-- Power BI Dashboard shows:
-  - Vendor-wise Sales and Margins
-  - Inventory Turnover
-  - Bulk Purchase Savings
-  - Performance Heatmaps
+- Total Transactions, Fraud Value, Fraudulent Transactions, False Positives (highlighted as KPI cards)
+- Risk Score Distribution (Histogram) → clear separation of fraud at higher scores
+- Fraud Over Time (Line Chart) → compares fraud trends against overall volume
+- Transaction Amount vs. Risk Score (Scatter Plot) → strong visual correlation between amount and risk
+- Fraud by Category (Bar Chart) → breakdown by Transaction_Type, Device_Type, Merchant_Category
+- True Positives & True Negatives (Cards) → positioned for quick model performance review
 
-![Vendor Performance Dashboard](images/dashboard.png)
 
----
-<h2><a class="anchor" id="how-to-run-this-project"></a>How to Run This Project</h2>
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/vendor-performance-analysis.git
-```
-3. Load the CSVs and ingest into database:
-```bash
-python scripts/ingestion_db.py
-```
-4. Create vendor summary table:
-```bash
-python scripts/get_vendor_summary.py
-```
-5. Open and run notebooks:
-   - `notebooks/exploratory_data_analysis.ipynb`
-   - `notebooks/vendor_performance_analysis.ipynb`
-6. Open Power BI Dashboard:
-   - `dashboard/vendor_performance_dashboard.pbix`
+![Fraud Detection and Risk Analysis Dashboard](images/dashboard.png)
 
 ---
-<h2><a class="anchor" id="final-recommendations"></a>Final Recommendations</h2>
 
-- Diversify vendor base to reduce risk
-- Optimize bulk order strategies
-- Reprice slow-moving, high-margin brands
-- Clear unsold inventory strategically
-- Improve marketing for underperforming vendors
-
----
 <h2><a class="anchor" id="author--contact"></a>Author & Contact</h2>
 
-**Ayushi Mishra**  
-Data Analyst  
-📧 Email: techclasses0810@gmail.com  
+**Kalta Rawal**  
+📧 Email: kaltarawal52@gmail.com
 🔗 [LinkedIn](https://www.linkedin.com/in/ayushi-mishra-30813b174/)  
 🔗 [Portfolio](https://www.youtube.com/@techclasses0810/)
