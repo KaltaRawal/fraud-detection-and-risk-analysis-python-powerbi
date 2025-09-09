@@ -13,7 +13,7 @@
 - <a href="#data-cleaning--preparation">Data Cleaning & Preparation</a>
 - <a href="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a>
 - <a href="#research-questions--key-findings">Research Questions & Key Findings</a>
-- <a href="#research-questions--key-findings">predictive--modeling</a>
+- <a href="#research-questions--key-findings">Predictive Modeling</a>
 - <a href="#dashboard">Dashboard</a>
 - <a href="#author--contact">Author & Contact</a>
 
@@ -117,8 +117,8 @@ vendor-performance-analysis/
 
 ---
 <h2><a class="anchor" id="predictive--modeling"></a>Predictive Modeling Insights </h2>
-- Identified key fraud indicators by conducting exploratory data analysis on a financial dataset, revealing that fraudulent transactions have a median value 5-10 times higher than legitimate ones and a dramatically higher average risk score.
--  Built a predictive model that demonstrated a 5.8% increase in fraud detection rate over a naive baseline, while maintaining an 88% precision to minimize false positives and reduce unnecessary manual reviews.
+* Identified key fraud indicators by conducting exploratory data analysis on a financial dataset, revealing that fraudulent transactions have a median value 5-10 times higher than legitimate ones and a dramatically higher average risk score.
+* Built a predictive model that demonstrated a 5.8% increase in fraud detection rate over a naive baseline, while maintaining an 88% precision to minimize false positives and reduce unnecessary manual reviews.
 
 
 ---
