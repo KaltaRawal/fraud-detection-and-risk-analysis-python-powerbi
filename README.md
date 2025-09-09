@@ -1,6 +1,6 @@
 
 # 🧾 Fraud Detection and Risk Analysis
-
+This project provides a data-driven solution for financial fraud detection, using Python, Predictive Analytics, PowerBI to streamline operations and minimize financial losses by identifying high-risk transactions.
 
 ---
 
@@ -108,7 +108,7 @@ This project utilizes a synthetic dataset sourced from Kaggle, tailored for fina
 - Fraud by Category (Bar Chart) → breakdown by Transaction_Type, Device_Type, Merchant_Category
 - True Positives & True Negatives (Cards) → positioned for quick model performance review
 
-
+https://github.com/KaltaRawal/fraud-detection-and-risk-analysis-python-powerbi/blob/906cfb1627bcb0b6deb107fbd2267e03175790e0/dashboard.png
 
 ---
 
