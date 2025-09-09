@@ -9,7 +9,6 @@
 - <a href="#business-problem">Business Problem</a>
 - <a href="#dataset">Dataset</a>
 - <a href="#tools--technologies">Tools & Technologies</a>
-- <a href="#project-structure">Project Structure</a>
 - <a href="#data-cleaning--preparation">Data Cleaning & Preparation</a>
 - <a href="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a>
 - <a href="#research-questions--key-findings">Research Questions & Key Findings</a>
@@ -44,29 +43,7 @@ This project utilizes a synthetic dataset sourced from Kaggle, tailored for fina
 - GitHub
 
 ---
-<h2><a class="anchor" id="project-structure"></a>Project Structure</h2>
 
-```
-vendor-performance-analysis/
-│
-├── README.md
-├── .gitignore
-├── requirements.txt
-├── Vendor Performance Report.pdf
-│
-├── notebooks/                  # Jupyter notebooks
-│   ├── exploratory_data_analysis.ipynb
-│   ├── vendor_performance_analysis.ipynb
-│
-├── scripts/                    # Python scripts for ingestion and processing
-│   ├── ingestion_db.py
-│   └── get_vendor_summary.py
-│
-├── dashboard/                  # Power BI dashboard file
-│   └── vendor_performance_dashboard.pbix
-```
-
----
 <h2><a class="anchor" id="data-cleaning--preparation"></a>Data Cleaning & Preparation</h2>
 
 - Capped extreme values in Transaction_Amount using winsorization to stabilize analysis
@@ -132,7 +109,6 @@ vendor-performance-analysis/
 - True Positives & True Negatives (Cards) → positioned for quick model performance review
 
 
-![Fraud Detection and Risk Analysis Dashboard](images/dashboard.png)
 
 ---
 
@@ -140,5 +116,4 @@ vendor-performance-analysis/
 
 **Kalta Rawal**  
 📧 Email: kaltarawal52@gmail.com
-🔗 [LinkedIn](https://www.linkedin.com/in/ayushi-mishra-30813b174/)  
-🔗 [Portfolio](https://www.youtube.com/@techclasses0810/)
+🔗 [LinkedIn](https://www.linkedin.com/in/kalta-rawal-86547525b/)  
