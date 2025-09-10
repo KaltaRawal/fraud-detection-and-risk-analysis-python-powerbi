@@ -32,7 +32,7 @@ Effective fraud detection and risk analysis are critical in the financial sector
 ---
 <h2><a class="anchor" id="dataset"></a>Dataset</h2>
 
-This project utilizes a synthetic dataset sourced from Kaggle, tailored for financial fraud detection. The dataset includes 21 features that simulate key aspects of transaction details and customer behavior, providing a realistic foundation for modeling and analysis.
+-This project utilizes a synthetic dataset sourced from Kaggle, tailored for financial fraud detection. The dataset includes 21 features that simulate key aspects of transaction details and customer behavior, providing a realistic foundation for modeling and analysis.
 ---
 
 <h2><a class="anchor" id="tools--technologies"></a>Tools & Technologies</h2>
