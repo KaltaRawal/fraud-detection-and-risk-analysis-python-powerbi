@@ -20,6 +20,7 @@ This project provides a data-driven solution for financial fraud detection, usin
 <h2><a class="anchor" id="overview"></a>Overview</h2>
 
 Developed a solution for financial fraud detection by analyzing financial transaction data using Exploratory Data Analysis (EDA) and predictive modeling to identify fraudulent activity. A Power BI dashboard was also created to visualize key metrics and provide actionable business insights from the findings.
+
 ---
 <h2><a class="anchor" id="business-problem"></a>Business Problem</h2>
 
@@ -33,7 +34,7 @@ Effective fraud detection and risk analysis are critical in the financial sector
 <h2><a class="anchor" id="dataset"></a>Dataset</h2>
 
 -This project utilizes a synthetic dataset sourced from Kaggle, tailored for financial fraud detection. 
--The dataset includes 21 features that simulate key aspects of transaction details and customer behavior, providing a realistic foundation for modeling and analysis.
+The dataset includes 21 features that simulate key aspects of transaction details and customer behavior, providing a realistic foundation for modeling and analysis.
 
 ---
 
@@ -96,8 +97,8 @@ Effective fraud detection and risk analysis are critical in the financial sector
 
 ---
 <h2><a class="anchor" id="predictive--modeling"></a>Predictive Modeling Insights </h2>
-* Identified key fraud indicators by conducting exploratory data analysis on a financial dataset, revealing that fraudulent transactions have a median value 5-10 times higher than legitimate ones and a dramatically higher average risk score
-* Built a predictive model that demonstrated a 5.8% increase in fraud detection rate over a naive baseline, while maintaining an 88% precision to minimize false positives and reduce unnecessary manual reviews
+Identified key fraud indicators by conducting exploratory data analysis on a financial dataset, revealing that fraudulent transactions have a median value 5-10 times higher than legitimate ones and a dramatically higher average risk score. 
+Built a predictive model that demonstrated a 5.8% increase in fraud detection rate over a naive baseline, while maintaining an 88% precision to minimize false positives and reduce unnecessary manual reviews
 
 
 ---
